@@ -24,7 +24,7 @@ public class CittadinoMenuApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         System.out.println("Entro nello start() di CittadinoMenuApplication");
-        Parent root = FXMLLoader.load((Objects.requireNonNull(getClass().getResource("/com/centrovaccinale/cittadinoview/CittadinoView.fxml"))));
+        Parent root = FXMLLoader.load((Objects.requireNonNull(getClass().getResource("/com/centrovaccinale/centrovaccinale/cittadinoview/CittadinoView.fxml"))));
         // Tale file lo inizializziamo nella scena
         Scene scene = new Scene(root, 600, 400);
 

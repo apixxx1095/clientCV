@@ -22,7 +22,7 @@ public class RegistraVaccinatoApplication extends Application {
         System.out.println("Entro nello stop() di RegistraVaccinatoApplication");
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(HomeApplication.class.getResource("/com/centrovaccinale/registrazionevaccinato/RegistrazioneVaccinatoView.fxml"));
+        loader.setLocation(HomeApplication.class.getResource("/com/centrovaccinale/centrovaccinale/registrazionevaccinato/RegistrazioneVaccinatoView.fxml"));
         Scene scene = new Scene(loader.load());
         primaryStage.setTitle("Registrazione - Vaccinato");
         primaryStage.setResizable(false);

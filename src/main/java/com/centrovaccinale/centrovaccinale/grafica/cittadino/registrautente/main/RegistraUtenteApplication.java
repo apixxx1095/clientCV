@@ -21,7 +21,7 @@ public class RegistraUtenteApplication extends Application {
     public void start(Stage primaryStage) throws IOException {
         System.out.println("Entro nello start() di RegistraUtenteApplication");
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(HomeApplication.class.getResource("/com/centrovaccinale/registrazioneutenza/RegistrazioneUtenzaView.fxml"));
+        loader.setLocation(HomeApplication.class.getResource("/com/centrovaccinale/centrovaccinale/registrazioneutenza/RegistrazioneUtenzaView.fxml"));
         Scene scene = new Scene(loader.load());
         primaryStage.setTitle("Registrazione - Cittadino");
         primaryStage.setResizable(false);

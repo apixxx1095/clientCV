@@ -27,7 +27,7 @@ public class OperatoreApplication extends Application {
     public void start(Stage primaryStage) throws IOException {
         System.out.println("Entro nello start() di OperatoreApplication");
         // Caricamento del file fxml
-        Parent root = FXMLLoader.load((Objects.requireNonNull(getClass().getResource("/com/centrovaccinale/operatoreview/OperatoreView.fxml"))));
+        Parent root = FXMLLoader.load((Objects.requireNonNull(getClass().getResource("/com/centrovaccinale/centrovaccinale/operatoreview/OperatoreView.fxml"))));
         // Tale file lo inizializziamo nella scena
         Scene scene = new Scene(root, 600, 400);
 

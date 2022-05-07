@@ -21,7 +21,7 @@ public class LoginApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         // Caricamento del file fxml
-        Parent root = FXMLLoader.load((Objects.requireNonNull(getClass().getResource("/com/centrovaccinale/loginview/LoginView.fxml"))));
+        Parent root = FXMLLoader.load((Objects.requireNonNull(getClass().getResource("/com/centrovaccinale/centrovaccinale/loginview/LoginView.fxml"))));
         // Tale file lo inizializziamo nella scena
         Scene scene = new Scene(root, 400, 500);
 

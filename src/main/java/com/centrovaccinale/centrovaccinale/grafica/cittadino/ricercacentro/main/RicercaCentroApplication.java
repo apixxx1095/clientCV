@@ -22,7 +22,7 @@ public class RicercaCentroApplication extends Application {
     public void start(Stage primaryStage) throws IOException {
         System.out.println("Entro nello start() di RicercaCentroApplication");
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/centrovaccinale/ricercacentroview/RicercaCentroView.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/centrovaccinale/centrovaccinale/ricercacentroview/RicercaCentroView.fxml")));
         Scene scene = new Scene(root);
         primaryStage.setTitle("Registrazione Nuovo Centro Vaccinale");
         primaryStage.setResizable(false);

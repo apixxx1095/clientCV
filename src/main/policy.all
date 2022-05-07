@@ -1,3 +1,0 @@
-grant codeBase "file:src/policy.all"{
-  permission java.security.AllPermission;
-};

@@ -19,7 +19,7 @@ public class HomeApplication extends Application {
     public void start(Stage primaryStage) throws IOException {
         System.out.println("Entro nello start() di HomeApplication");
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(HomeApplication.class.getResource("/com/centrovaccinale/homeview/HomeView.fxml"));
+        loader.setLocation(HomeApplication.class.getResource("/com/centrovaccinale/centrovaccinale/homeview/HomeView.fxml"));
         Scene scene = new Scene(loader.load(), 600, 400);
         primaryStage.setTitle("Home - CentroVaccinale");
         primaryStage.setResizable(false);

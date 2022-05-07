@@ -20,7 +20,7 @@ public class RegistraEventoApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/centrovaccinale/registrazioneeventoview/RegistrazioneEventoAvversoView.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/centrovaccinale/centrovaccinale/registrazioneeventoview/RegistrazioneEventoAvversoView.fxml")));
 
         Scene scene = new Scene(root);
         primaryStage.setTitle("Registrazione Evento Avverso");

@@ -46,9 +46,6 @@ public class RicercaCentroController implements Initializable, EventHandler<KeyE
     @FXML
     private void ricerca(ActionEvent event){
         Object evt = event.getSource();
-        ricerca_centro_nomeCentro.setText("");
-        ricerca_centro_comuneCentro.setText("");
-        ricerca_centro_tipologiaCentro.setText("");
         if(centriTrovati != null){
             listaCentri.getItems().removeAll(centriTrovati);
             listaCentri.getItems().clear();

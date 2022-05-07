@@ -128,8 +128,13 @@ public class RegistraEventoController implements Initializable, EventHandler<Key
         };
 
         try{
-            this.nomeCentro = RunnerRMI.getInstance().getServer().cercaCentroUtente(Login.getInstance().getUsername());
-            this.registrazione_evento_nomeCentro.setText(this.nomeCentro);
+            if(RunnerRMI.getInstance() != null && RunnerRMI.getInstance().getServer() != null){
+                this.nomeCentro = RunnerRMI.getInstance().getServer().cercaCentroUtente(Login.getInstance().getUsername());
+                this.registrazione_evento_nomeCentro.setText(this.nomeCentro);
+            }else {
+                this.nomeCentro = "NOME CENTRO PROVA";
+                this.registrazione_evento_nomeCentro.setText(this.nomeCentro);
+            }
         } catch (SQLException | RemoteException e) {
             System.err.println("Errore nell'initialize di RegistraEventoController");
         }
