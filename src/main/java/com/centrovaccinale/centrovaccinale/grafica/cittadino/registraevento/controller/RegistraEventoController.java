@@ -119,10 +119,6 @@ public class RegistraEventoController implements Initializable, EventHandler<Key
         });
 
         registrazione_evento_notaEvento.addEventFilter(KeyEvent.KEY_TYPED, this);
-
-//        NEL CASO SI VOGLIA PROVARE SENZA CONNESSIONE AL SERVER
-//        registrazione_evento_nomeCentro.setText("PROVA CENTRO");
-
         String[] tipoEvento = {
                 "Mal di testa", "Febbre", "Dolori muscolari e articolare", "Linfoadenopatia", "Tachicardia", "Crisi ipertensiva"
         };
