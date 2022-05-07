@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" style="-fx-background-color: #30373e;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.centrovaccinale.centrovaccinale.grafica.cittadino.menu.controller.CittadinoMenuController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+         <children>
+            <Label text="Cittadino" textFill="#c3bfbf" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect></Label>
+            <Label fx:id="labelUser" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+               <image>
+                  <Image url="@../images/man.png" />
+               </image>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <effect>
+                  <Glow />
+               </effect>
+            </ImageView>
+            <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#actionEvent" prefHeight="30.0" prefWidth="150.0" text="Effettua login" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btnLogout" disable="true" layoutX="96.0" layoutY="245.0" mnemonicParsing="false" onAction="#actionEvent" prefHeight="30.0" prefWidth="150.0" text="Effettua logout">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnHome" layoutX="96.0" layoutY="261.0" mnemonicParsing="false" onAction="#actionEvent" prefHeight="30.0" prefWidth="150.0" text="Torna alla Home">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </VBox>
+      <Separator disable="true" orientation="VERTICAL" prefHeight="295.0" prefWidth="0.0">
+         <HBox.margin>
+            <Insets bottom="5.0" top="5.0" />
+         </HBox.margin>
+      </Separator>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: url(.../background/operatore_background.jpg);" HBox.hgrow="ALWAYS">
+         <children>
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="269.0" text="Scegli l'operazione da effettuare:" textFill="#e0d6d6" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect></Label>
+            <Button fx:id="btnRegistrati" defaultButton="true" mnemonicParsing="false" onAction="#actionEvent" prefHeight="50.0" prefWidth="200.0" text="Registrati" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnCercaCentro" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#actionEvent" prefHeight="50.0" prefWidth="200.0" text="Cerca Centro Vaccinale" wrapText="true" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnRegistraEvento" defaultButton="true" disable="true" layoutX="46.0" layoutY="172.0" mnemonicParsing="false" onAction="#actionEvent" prefHeight="50.0" prefWidth="200.0" text="Inserisci evento Avverso">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </VBox>
+   </children>
+</HBox>

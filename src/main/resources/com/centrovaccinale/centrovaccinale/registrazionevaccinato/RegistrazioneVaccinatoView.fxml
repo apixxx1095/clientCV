@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.centrovaccinale.centrovaccinale.grafica.operatore.registravaccinato.controller.RegistraVaccinatoController">
+   <children>
+      <Label alignment="CENTER" layoutX="9.0" layoutY="24.0" prefHeight="30.0" prefWidth="600.0" text="REGISTRAZIONE VACCINATO">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="77.0" prefHeight="30.0" prefWidth="162.0" text="Nome centro vaccinale:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="menuListaCentri" layoutX="220.0" layoutY="80.0" onAction="#settaCentro" prefHeight="25.0" prefWidth="339.0" promptText="Seleziona Centro Vaccinale" />
+      <Label layoutX="53.0" layoutY="115.0" prefHeight="30.0" prefWidth="162.0" text="Nome cittadino">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="registraCittadino_nomeCittadino" layoutX="53.0" layoutY="145.0" prefHeight="25.0" prefWidth="245.0" promptText="Insersci nome del cittadino" />
+      <Label layoutX="314.0" layoutY="115.0" prefHeight="30.0" prefWidth="162.0" text="Cognome cittadino">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="registraCittadino_cognomeCittadino" layoutX="314.0" layoutY="145.0" prefHeight="25.0" prefWidth="245.0" promptText="Insersci cognome del cittadino" />
+      <Label layoutX="53.0" layoutY="191.0" prefHeight="30.0" prefWidth="97.0" text="Codice fiscale">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="registraCittadino_codiceFiscale" layoutX="167.0" layoutY="194.0" prefHeight="25.0" prefWidth="391.0" promptText="Insersci codice fiscale del cittadino" />
+      <Label layoutX="53.0" layoutY="235.0" prefHeight="30.0" prefWidth="151.0" text="Vaccino Somministrato">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="registraCittadino_vaccinoSomministrato_pfitzer" layoutX="225.0" layoutY="241.0" mnemonicParsing="false" text="Pfizer">
+         <toggleGroup>
+            <ToggleGroup fx:id="toggleGroupVaccinoSomministrato" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="registraCittadino_vaccinoSomministrato_astraZeneca" layoutX="303.0" layoutY="241.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="97.0" text="AstraZeneca" toggleGroup="$toggleGroupVaccinoSomministrato" />
+      <RadioButton fx:id="registraCittadino_vaccinoSomministrato_moderna" layoutX="414.0" layoutY="241.0" mnemonicParsing="false" text="Moderna" toggleGroup="$toggleGroupVaccinoSomministrato" />
+      <RadioButton fx:id="registraCittadino_vaccinoSomministrato_jj" layoutX="509.0" layoutY="241.0" mnemonicParsing="false" text="J&amp;J" toggleGroup="$toggleGroupVaccinoSomministrato" />
+      <Label layoutX="52.0" layoutY="275.0" prefHeight="30.0" prefWidth="204.0" text="Data somministrazione vaccino">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="registraCittadino_dataSomministrazioneVaccino" editable="false" layoutX="266.0" layoutY="278.0" onAction="#aggiornataData" prefHeight="25.0" prefWidth="288.0" promptText="Data somministrazione vaccino" />
+      <Label fx:id="errorLabel" alignment="CENTER" layoutX="12.0" layoutY="324.0" prefHeight="17.0" prefWidth="575.0" />
+      <Button fx:id="registraVaccinatoBtn" defaultButton="true" layoutX="208.0" layoutY="363.0" mnemonicParsing="false" onAction="#registraVaccinato" prefHeight="25.0" prefWidth="174.0" text="Registra Vaccinato" />
+      <Button fx:id="tornaHomeBtn" layoutX="208.0" layoutY="395.0" mnemonicParsing="false" onAction="#tornaHome" prefHeight="25.0" prefWidth="174.0" text="Torna alla Home" />
+   </children>
+</Pane>
