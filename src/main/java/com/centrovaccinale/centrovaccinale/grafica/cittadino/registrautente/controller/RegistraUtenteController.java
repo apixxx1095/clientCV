@@ -46,6 +46,7 @@ RegistraUtenteController implements Initializable, EventHandler<KeyEvent> {
 
     @FXML
     protected void registraUtenza(ActionEvent event){
+        errorLabel.setText("");
         try{
             if(
                     (!textNomeUtente.getText().isEmpty() && !textCognomeUtente.getText().isEmpty() &&
@@ -54,7 +55,6 @@ RegistraUtenteController implements Initializable, EventHandler<KeyEvent> {
                             !textIdVaccinazione.getText().isEmpty() &&
                             !RunnerRMI.getInstance().getServer().getListaCFCittadiniRegistrati().contains(textCodFiscale.getText().toUpperCase()) &&
                             !RunnerRMI.getInstance().getServer().idVaccinazioneUtenzeIsPresente(Short.parseShort(textIdVaccinazione.getText())) &&
-                            !(Integer.parseInt(textIdVaccinazione.getText()) > 32767) &&
                             !RunnerRMI.getInstance().getServer().usernameIsPresente(textUsername.getText()) &&
                             RunnerRMI.getInstance().getServer().idVaccinazioneVaccinatiIsPresente(Short.parseShort(textIdVaccinazione.getText()))
 
@@ -85,7 +85,8 @@ RegistraUtenteController implements Initializable, EventHandler<KeyEvent> {
                     alert.setContentText("Registrazione Andata a buon fine!");
                     alert.showAndWait();
                 }
-            }else if(
+            }
+            else if(
                     textNomeUtente.getText().isEmpty() || textCognomeUtente.getText().isEmpty() ||
                             textCodFiscale.getText().isEmpty() || textEmail.getText().isEmpty() || textUsername.getText().isEmpty()
                     || textPassword.getText().isEmpty() || textIdVaccinazione.getText().isEmpty()
@@ -174,12 +175,10 @@ RegistraUtenteController implements Initializable, EventHandler<KeyEvent> {
                 event.consume();
             }
         }
+        // TODO: CONTROLLARE CHE ID VACCINAZIONE NON SUPERI SHORT.MAX
         else if(evt.equals(textIdVaccinazione)){
             if(!Character.isDigit(event.getCharacter().charAt(0))){
                 event.consume();
-            } else if (Integer.parseInt(textIdVaccinazione.getText() + event.getCharacter()) > 32767){
-                errorLabel.setTextFill(Color.RED);
-                errorLabel.setText("Il valore dell'id di vaccinazione non deve superare 32767");
             }
         }
     }

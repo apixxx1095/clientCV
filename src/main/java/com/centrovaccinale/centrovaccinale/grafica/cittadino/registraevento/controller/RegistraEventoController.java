@@ -53,16 +53,16 @@ public class RegistraEventoController implements Initializable, EventHandler<Key
 
     @FXML
     private void registraEventoAvverso(ActionEvent actionEvent){
+        errorLabel.setText("");
+        errorLabel.setTextFill(Color.RED);
         try{
             if(severita > 0 && tipoEventoSelezionato != null){
-                errorLabel.setText("");
                 EventoAvverso eventoAvverso = new EventoAvverso(nomeCentro, tipoEventoSelezionato, severita, registrazione_evento_notaEvento.getText());
                 RunnerRMI runnerRMI;
                 if(RunnerRMI.tryConnectionServer()){
                     runnerRMI = RunnerRMI.getInstance();
                     Server server = runnerRMI.getServer();
                     if(server.registraEventoAvverso(eventoAvverso, runnerRMI.getClient().getRef().remoteToString())){
-                        registrazione_evento_menuTipoEvento.setValue("Seleziona tipo evento");
                         Alert alert = new Alert(Alert.AlertType.INFORMATION);
                         alert.setHeaderText(null);
                         alert.setTitle("Registrazione andata a buon fine!");
@@ -71,28 +71,23 @@ public class RegistraEventoController implements Initializable, EventHandler<Key
                     }
                 }
             }else if(tipoEventoSelezionato == null){
-                errorLabel.setTextFill(Color.RED);
                 errorLabel.setText("Selezionare un tipo di evento!");
             }else if(registrazione_evento_toggleSeverita.getSelectedToggle() == null){
-                errorLabel.setTextFill(Color.RED);
                 errorLabel.setText("Selezionare un grado di severita'!");
             }
         }
         catch (NotBoundException | RemoteException e) {
-            errorLabel.setTextFill(Color.RED);
             errorLabel.setText(e.getCause().getMessage());
             try {
                 if(!RunnerRMI.tryConnectionServer()){
                     RunnerRMI.getInstance().setServer(null);
                 }
             } catch (NotBoundException | RemoteException ex) {
-                errorLabel.setTextFill(Color.RED);
                 errorLabel.setText(e.getCause().getMessage());
                 System.err.println(e.getMessage());
             }
         }
         catch (SQLException e) {
-            errorLabel.setTextFill(Color.RED);
             errorLabel.setText(e.getCause().getMessage());
         }
     }
