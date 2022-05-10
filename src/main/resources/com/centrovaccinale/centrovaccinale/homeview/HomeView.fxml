@@ -15,31 +15,46 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.centrovaccinale.centrovaccinale.grafica.home.controller.HomeController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #30373F" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.centrovaccinale.centrovaccinale.grafica.home.controller.HomeController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="580.0" text="Centro Vaccinale" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <font>
             <Font name="Century" size="46.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.7900000214576721" green="0.06319999694824219" blue="0.06319999694824219" opacity="0.800000011920929" />
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.2727328531674579">
+                     <color>
+                        <Color red="1.0" green="0.5523809790611267" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5188656081191684">
+                     <color>
+                        <Color red="0.9142857193946838" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.7435750532001965">
+                     <color>
+                        <Color green="1.0" blue="0.05714285746216774" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.15600000321865082" green="0.031199999153614044" blue="0.7799999713897705" opacity="0.7304584383964539" />
+                        <Color green="0.8857142925262451" blue="1.0" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
          </textFill>
-         <effect>
-            <DropShadow />
-         </effect>
       </Label>
       <HBox id="hBoxScelta" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="340.0" prefWidth="540.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="50.0">
          <opaqueInsets>
