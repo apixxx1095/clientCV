@@ -66,16 +66,15 @@ public class RicercaCentroController implements Initializable, EventHandler<KeyE
                             listaCentri.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
                                 @Override
                                 public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                                    informazioniCentro.clear();
                                     try {
                                         if(t1 != null){
                                             List<RiepilogoEventi> riepilogoEventi = RunnerRMI.getInstance().getServer().riepilogoEventi(t1, RunnerRMI.getInstance().getClient().getRef().toString());
                                             if(riepilogoEventi.size() > 0){
                                                 for(RiepilogoEventi evento: riepilogoEventi){
-                                                    informazioniCentro.setText("");
-                                                    informazioniCentro.appendText(evento + "\n");
+                                                    informazioniCentro.appendText(evento + "\n\n");
                                                 }
                                             }else{
-                                                informazioniCentro.setText("");
                                                 informazioniCentro.appendText("Non sono stati trovati eventi registrati");
                                             }
                                         }
@@ -193,7 +192,12 @@ public class RicercaCentroController implements Initializable, EventHandler<KeyE
         ricerca_centro_nomeCentro.addEventFilter(KeyEvent.KEY_TYPED, this);
         ricerca_centro_comuneCentro.addEventFilter(KeyEvent.KEY_TYPED, this);
         ricerca_centro_tipologiaCentro.addEventFilter(KeyEvent.KEY_TYPED, this);
-
+        informazioniCentro.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                informazioniCentro.setScrollTop(Double.MAX_VALUE);
+            }
+        });
     }
 
     @Override

@@ -51,7 +51,7 @@ public class RiepilogoEventi implements Serializable {
     @Override
     public String toString() {
         return "Evento: '" + nomeEvento + '\'' +
-                "\nFrequenza:" + numeroEventi +
+                "\nFrequenza: " + numeroEventi +
                 "\nMedia severita: " + mediaSeverita;
     }
 }
