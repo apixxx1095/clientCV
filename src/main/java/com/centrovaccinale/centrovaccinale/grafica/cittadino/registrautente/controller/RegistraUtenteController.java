@@ -177,8 +177,17 @@ RegistraUtenteController implements Initializable, EventHandler<KeyEvent> {
         }
         // TODO: CONTROLLARE CHE ID VACCINAZIONE NON SUPERI SHORT.MAX
         else if(evt.equals(textIdVaccinazione)){
+            errorLabel.setText("");
             if(!Character.isDigit(event.getCharacter().charAt(0))){
                 event.consume();
+            }
+            else if(
+                    !textIdVaccinazione.getText().isEmpty() &&
+                            !(Integer.parseInt(textIdVaccinazione.getText() + event.getCharacter().charAt(0)) < (Short.MAX_VALUE + 1))
+            ){
+                event.consume();
+                errorLabel.setTextFill(Color.RED);
+                errorLabel.setText("Inserisci un id vaccinazione che non superi: " + Short.MAX_VALUE);
             }
         }
     }
