@@ -8,55 +8,68 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.centrovaccinale.centrovaccinale.grafica.operatore.registracentro.controller.RegistraCentroController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #30373e;"  xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.centrovaccinale.centrovaccinale.grafica.operatore.registracentro.controller.RegistraCentroController">
    <children>
-      <Label alignment="CENTER" layoutY="14.0" prefHeight="30.0" prefWidth="600.0" text="REGISTRAZIONE CENTRO VACCINALE">
+      <Label alignment="CENTER" layoutY="14.0" prefHeight="30.0" prefWidth="600.0" text="REGISTRAZIONE CENTRO VACCINALE" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <TextField fx:id="registraCentro_nomeCentro" layoutX="46.0" layoutY="73.0" prefHeight="25.0" prefWidth="507.0" promptText="Insersci nome del centro" />
-      <TextField fx:id="registraCentro_indirizzo" layoutX="46.0" layoutY="210.0" prefHeight="25.0" prefWidth="329.0" promptText="Inserisci indirizzo del centro" />
-      <TextField fx:id="registraCentro_numeroCivico" layoutX="391.0" layoutY="210.0" prefHeight="25.0" prefWidth="162.0" promptText="Inserisci n. civico" />
-      <TextField fx:id="registraCentro_comune" layoutX="46.0" layoutY="277.0" prefHeight="25.0" prefWidth="153.0" promptText="Inserisci comune" />
-      <TextField fx:id="registraCentro_provincia" layoutX="210.0" layoutY="277.0" promptText="Inserisci provincia" />
-      <TextField fx:id="registraCentro_cap" layoutX="391.0" layoutY="277.0" prefHeight="25.0" prefWidth="162.0" promptText="Inserisci cap" />
-      <Label layoutX="210.0" layoutY="244.0" prefHeight="30.0" prefWidth="90.0" text="Provincia" />
-      <Label layoutX="46.0" layoutY="177.0" prefHeight="30.0" prefWidth="90.0" text="Indirizzo">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <Label layoutX="391.0" layoutY="244.0" prefHeight="30.0" prefWidth="90.0" text="CAP" />
-      <Label layoutX="46.0" layoutY="105.0" prefHeight="30.0" prefWidth="90.0" text="Tipologia">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <Label layoutX="391.0" layoutY="177.0" prefHeight="30.0" prefWidth="90.0" text="Numero civico" />
-      <Label layoutX="46.0" layoutY="244.0" prefHeight="30.0" prefWidth="90.0" text="Comune" />
-      <Label layoutX="46.0" layoutY="141.0" prefHeight="30.0" prefWidth="90.0" text="Qualificatore">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <Label layoutX="51.0" layoutY="44.0" prefHeight="30.0" prefWidth="90.0" text="Nome centro">
+      <Label layoutX="46.0" layoutY="44.0" prefHeight="30.0" prefWidth="90.0" text="Nome centro" textFill="#e6e9ed">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <RadioButton fx:id="registraCentro_tipologia_ospedaliero" layoutX="136.0" layoutY="112.0" mnemonicParsing="false" text="Ospedaliero">
+      <TextField fx:id="registraCentro_nomeCentro" layoutX="46.0" layoutY="73.0" prefHeight="25.0" prefWidth="507.0" promptText="Insersci nome del centro" />
+      <Label layoutX="46.0" layoutY="105.0" prefHeight="30.0" prefWidth="90.0" text="Tipologia" textFill="#e6e9ed">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <RadioButton fx:id="registraCentro_tipologia_ospedaliero" layoutX="143.0" layoutY="112.0" mnemonicParsing="false" text="Ospedaliero" textFill="#e6e9ed">
          <toggleGroup>
             <ToggleGroup fx:id="toggleGroupTipologia" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="registraCentro_tipologia_aziendale" layoutX="230.0" layoutY="112.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="85.0" text="Aziendale" toggleGroup="$toggleGroupTipologia" />
-      <RadioButton fx:id="registraCentro_tipologia_hub" layoutX="315.0" layoutY="112.0" mnemonicParsing="false" text="Hub" toggleGroup="$toggleGroupTipologia" />
-      <RadioButton fx:id="registraCentro_qualificatore_via" layoutX="136.0" layoutY="148.0" mnemonicParsing="false" text="Via">
+      <RadioButton fx:id="registraCentro_tipologia_aziendale" layoutX="266.0" layoutY="112.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="85.0" text="Aziendale" textFill="#e6e9ed" toggleGroup="$toggleGroupTipologia" />
+      <RadioButton fx:id="registraCentro_tipologia_hub" layoutX="414.0" layoutY="112.0" mnemonicParsing="false" text="Hub" textFill="#e6e9ed" toggleGroup="$toggleGroupTipologia" />
+      <Label layoutX="46.0" layoutY="141.0" prefHeight="30.0" prefWidth="90.0" text="Qualificatore" textFill="#e6e9ed">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <RadioButton fx:id="registraCentro_qualificatore_via" layoutX="143.0" layoutY="148.0" mnemonicParsing="false" text="Via" textFill="#e6e9ed">
          <toggleGroup>
             <ToggleGroup fx:id="toggleGroupQualificatore" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="registraCentro_qualificatore_viale" layoutX="185.0" layoutY="148.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="70.0" text="Viale" toggleGroup="$toggleGroupQualificatore" />
-      <RadioButton fx:id="registraCentro_qualificatore_piazza" layoutX="239.0" layoutY="148.0" mnemonicParsing="false" text="Piazza" toggleGroup="$toggleGroupQualificatore" />
+      <RadioButton fx:id="registraCentro_qualificatore_viale" layoutX="266.0" layoutY="148.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="70.0" text="Viale" textFill="#e6e9ed" toggleGroup="$toggleGroupQualificatore" />
+      <RadioButton fx:id="registraCentro_qualificatore_piazza" layoutX="414.0" layoutY="148.0" mnemonicParsing="false" text="Piazza" textFill="#e6e9ed" toggleGroup="$toggleGroupQualificatore" />
+      <Label layoutX="46.0" layoutY="177.0" prefHeight="30.0" prefWidth="90.0" text="Indirizzo" textFill="#e6e9ed">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TextField fx:id="registraCentro_indirizzo" layoutX="46.0" layoutY="210.0" prefHeight="25.0" prefWidth="329.0" promptText="Inserisci indirizzo del centro" />
+      <Label layoutX="391.0" layoutY="177.0" prefHeight="30.0" prefWidth="90.0" text="Numero civico" textFill="#e6e9ed">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TextField fx:id="registraCentro_numeroCivico" layoutX="391.0" layoutY="210.0" prefHeight="25.0" prefWidth="162.0" promptText="Inserisci n. civico" />
+      <Label layoutX="46.0" layoutY="244.0" prefHeight="30.0" prefWidth="90.0" text="Comune" textFill="#e6e9ed">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="registraCentro_comune" layoutX="46.0" layoutY="277.0" prefHeight="25.0" prefWidth="153.0" promptText="Inserisci comune" />
+      <Label layoutX="210.0" layoutY="244.0" prefHeight="30.0" prefWidth="90.0" text="Provincia" textFill="#e6e9ed">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TextField fx:id="registraCentro_provincia" layoutX="210.0" layoutY="277.0" promptText="Inserisci provincia" />
+      <Label layoutX="391.0" layoutY="244.0" prefHeight="30.0" prefWidth="90.0" text="CAP" textFill="#e6e9ed">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TextField fx:id="registraCentro_cap" layoutX="391.0" layoutY="277.0" prefHeight="25.0" prefWidth="162.0" promptText="Inserisci CAP" />
       <Label fx:id="errorLabel" alignment="CENTER" layoutX="13.0" layoutY="308.0" prefHeight="17.0" prefWidth="575.0" />
-      <Button fx:id="registraCentroBtn" defaultButton="true" layoutX="217.0" layoutY="331.0" mnemonicParsing="false" onAction="#registraCentroVaccinale" text="Registra Centro Vaccinale" />
-      <Button fx:id="tornaHomeBtn" layoutX="216.0" layoutY="362.0" mnemonicParsing="false" onAction="#tornaHome" prefHeight="25.0" prefWidth="153.0" text="Torna alla Home" />
+      <Button fx:id="registraCentroBtn" defaultButton="true" layoutX="200.0" layoutY="339.0" mnemonicParsing="false" onAction="#registraCentroVaccinale" prefWidth="200.0" text="Registra centro vaccinale" style="-fx-background-color: #abd4e8;"/>
+      <Button fx:id="tornaHomeBtn" layoutX="200.0" layoutY="366.0" mnemonicParsing="false" onAction="#tornaHome" prefWidth="200.0" text="Torna alla Home" style="-fx-background-color: #dedede;"/>
    </children>
 </Pane>
