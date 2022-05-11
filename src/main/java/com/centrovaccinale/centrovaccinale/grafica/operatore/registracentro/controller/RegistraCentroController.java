@@ -99,11 +99,11 @@ public class RegistraCentroController implements Initializable, EventHandler <Ke
                         errorLabel.setText("");
                         Alert alert = new Alert(Alert.AlertType.INFORMATION);
                         alert.setHeaderText(null);
-                        alert.setTitle("Operazione Riuscita!");
-                        alert.setContentText("Centro Vaccinale registrato correttamente!");
+                        alert.setTitle("Operazione riuscita!");
+                        alert.setContentText("Centro vaccinale registrato correttamente!");
                         alert.showAndWait();
                         System.out.println("Fine operazione");
-//                        JOptionPane.showInternalMessageDialog(null, "Registrazione Andata a buon fine!", "Operazione Riuscita", JOptionPane.INFORMATION_MESSAGE);
+//                        JOptionPane.showInternalMessageDialog(null, "Registrazione andata a buon fine!", "Operazione riuscita", JOptionPane.INFORMATION_MESSAGE);
                     }
                 }
             }else if(RunnerRMI.getInstance().getServer().getListaCentri().contains(registraCentro_nomeCentro.getText().toUpperCase())){
