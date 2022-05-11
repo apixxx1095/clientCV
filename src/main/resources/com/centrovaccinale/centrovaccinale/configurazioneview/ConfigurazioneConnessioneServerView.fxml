@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="397.0" prefWidth="451.0" spacing="10.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.centrovaccinale.centrovaccinale.grafica.configurazione.controller.ConfigurazioneController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="397.0" prefWidth="451.0" spacing="10.0" style="-fx-background-color: #e0e0e0;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.centrovaccinale.centrovaccinale.grafica.configurazione.controller.ConfigurazioneController">
    <children>
       <Label alignment="CENTER" prefHeight="64.0" prefWidth="411.0" text="Configurazione connessione server">
          <font>
@@ -28,7 +28,7 @@
             <TextField fx:id="portServerText" layoutX="178.0" layoutY="101.0" prefHeight="25.0" prefWidth="217.0" />
          </children>
       </Pane>
-      <Button fx:id="configuraBtn" defaultButton="true" mnemonicParsing="false" onAction="#configurazioneConnessioneServer" prefHeight="40.0" prefWidth="378.0" text="Configura">
+      <Button fx:id="configuraBtn" defaultButton="true" mnemonicParsing="false" onAction="#configurazioneConnessioneServer" prefHeight="40.0" prefWidth="378.0" text="Configura" style="-fx-background-color: #a2d1e8;">
          <font>
             <Font size="18.0" />
          </font></Button>
