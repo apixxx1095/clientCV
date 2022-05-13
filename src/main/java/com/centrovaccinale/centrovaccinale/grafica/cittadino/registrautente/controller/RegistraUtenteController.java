@@ -81,8 +81,8 @@ RegistraUtenteController implements Initializable, EventHandler<KeyEvent> {
 
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setHeaderText(null);
-                    alert.setTitle("Operazione Riuscita");
-                    alert.setContentText("Registrazione Andata a buon fine!");
+                    alert.setTitle("Operazione riuscita");
+                    alert.setContentText("Registrazione andata a buon fine!");
                     alert.showAndWait();
                 }
             }
@@ -96,7 +96,7 @@ RegistraUtenteController implements Initializable, EventHandler<KeyEvent> {
             }
             else if(RunnerRMI.getInstance().getServer().getListaCFCittadiniRegistrati().contains(textCodFiscale.getText().toUpperCase())){
                 errorLabel.setTextFill(Color.RED);
-                errorLabel.setText("Codice Fiscale risulta gia' registrato a sistema.");
+                errorLabel.setText("Codice fiscale risulta gia' registrato a sistema.");
             }
             else if(RunnerRMI.getInstance().getServer().usernameIsPresente(textUsername.getText())){
                 errorLabel.setTextFill(Color.RED);

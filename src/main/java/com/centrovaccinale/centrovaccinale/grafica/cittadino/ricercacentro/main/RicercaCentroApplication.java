@@ -24,7 +24,7 @@ public class RicercaCentroApplication extends Application {
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/centrovaccinale/centrovaccinale/ricercacentroview/RicercaCentroView.fxml")));
         Scene scene = new Scene(root);
-        primaryStage.setTitle("Registrazione Nuovo Centro Vaccinale");
+        primaryStage.setTitle("Registrazione nuovo centro vaccinale");
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
         primaryStage.show();
