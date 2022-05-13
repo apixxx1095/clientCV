@@ -63,24 +63,21 @@ public class RicercaCentroController implements Initializable, EventHandler<KeyE
                         if(centriTrovati.size() > 0){
                             ricerca_centro_nomeCentro.setText("");
                             listaCentri.getItems().addAll(centriTrovati);
-                            listaCentri.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-                                @Override
-                                public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                                    informazioniCentro.clear();
-                                    try {
-                                        if(t1 != null){
-                                            List<RiepilogoEventi> riepilogoEventi = RunnerRMI.getInstance().getServer().riepilogoEventi(t1, RunnerRMI.getInstance().getClient().getRef().toString());
-                                            if(riepilogoEventi.size() > 0){
-                                                for(RiepilogoEventi evento: riepilogoEventi){
-                                                    informazioniCentro.appendText(evento + "\n\n");
-                                                }
-                                            }else{
-                                                informazioniCentro.appendText("Non sono stati trovati eventi registrati");
+                            listaCentri.getSelectionModel().selectedItemProperty().addListener((observableValue, s, t1) -> {
+                                informazioniCentro.clear();
+                                try {
+                                    if(t1 != null){
+                                        List<RiepilogoEventi> riepilogoEventi = RunnerRMI.getInstance().getServer().riepilogoEventi(t1, RunnerRMI.getInstance().getClient().getRef().toString());
+                                        if(riepilogoEventi.size() > 0){
+                                            for(RiepilogoEventi evento: riepilogoEventi){
+                                                informazioniCentro.appendText(evento + "\n\n");
                                             }
+                                        }else{
+                                            informazioniCentro.appendText("Non sono stati trovati eventi registrati");
                                         }
-                                    } catch (SQLException | RemoteException e) {
-                                        e.printStackTrace();
                                     }
+                                } catch (SQLException | RemoteException e) {
+                                    e.printStackTrace();
                                 }
                             });
                         }else {
@@ -121,32 +118,31 @@ public class RicercaCentroController implements Initializable, EventHandler<KeyE
                         ricerca_centro_comuneCentro.setText("");
                         ricerca_centro_tipologiaCentro.setText("");
                         listaCentri.getItems().addAll(centriTrovati);
-                        listaCentri.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-                            @Override
-                            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                                try {
-                                    if(t1 != null){
-                                        List<RiepilogoEventi> riepilogoEventi = RunnerRMI.getInstance().getServer().riepilogoEventi(t1, RunnerRMI.getInstance().getClient().getRef().toString());
-                                        if(riepilogoEventi.size() > 0){
-                                            for(RiepilogoEventi evento: riepilogoEventi){
-                                                informazioniCentro.clear();
-                                                informazioniCentro.appendText(evento + "\n");
-                                            }
-                                        }
-                                        else{
-                                            informazioniCentro.setText("");
-                                            informazioniCentro.appendText("Non sono stati trovati eventi registrati");
+                        listaCentri.getSelectionModel().selectedItemProperty().addListener((observableValue, s, t1) -> {
+                            try {
+                                if(t1 != null){
+                                    List<RiepilogoEventi> riepilogoEventi = RunnerRMI.getInstance().getServer().riepilogoEventi(t1, RunnerRMI.getInstance().getClient().getRef().toString());
+                                    if(riepilogoEventi.size() > 0){
+                                        for(RiepilogoEventi evento: riepilogoEventi){
+                                            informazioniCentro.clear();
+                                            informazioniCentro.appendText(evento + "\n");
                                         }
                                     }
-                                } catch (SQLException | RemoteException e) {
-                                    e.printStackTrace();
+                                    else{
+                                        informazioniCentro.setText("");
+                                        informazioniCentro.appendText("Non sono stati trovati eventi registrati");
+                                    }
                                 }
+                            } catch (SQLException | RemoteException e) {
+                                e.printStackTrace();
                             }
                         });
                     }
                     else {
                         messagesLabel.setTextFill(Color.RED);
                         messagesLabel.setText("Non sono stati trovati centri per il comune di " + ricerca_centro_comuneCentro.getText() + " di tipo " + ricerca_centro_tipologiaCentro.getText());
+                        ricerca_centro_comuneCentro.setText("");
+                        ricerca_centro_tipologiaCentro.setText("");
                     }
 
                 } catch (RemoteException e) {
@@ -192,12 +188,7 @@ public class RicercaCentroController implements Initializable, EventHandler<KeyE
         ricerca_centro_nomeCentro.addEventFilter(KeyEvent.KEY_TYPED, this);
         ricerca_centro_comuneCentro.addEventFilter(KeyEvent.KEY_TYPED, this);
         ricerca_centro_tipologiaCentro.addEventFilter(KeyEvent.KEY_TYPED, this);
-        informazioniCentro.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                informazioniCentro.setScrollTop(Double.MAX_VALUE);
-            }
-        });
+        informazioniCentro.textProperty().addListener((observableValue, s, t1) -> informazioniCentro.setScrollTop(Double.MAX_VALUE));
     }
 
     @Override
