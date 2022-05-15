@@ -3,6 +3,8 @@ package com.centrovaccinale.centrovaccinale.grafica.configurazione.controller;
 import com.centrovaccinale.centrovaccinale.grafica.home.main.HomeApplication;
 import com.centrovaccinale.centrovaccinale.utils.LoadStage;
 import com.centrovaccinale.centrovaccinale.utils.RunnerRMI;
+import javafx.concurrent.Task;
+import javafx.concurrent.WorkerStateEvent;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -13,13 +15,19 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 
 import java.net.URL;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class ConfigurazioneController implements Initializable, EventHandler<KeyEvent> {
+    private static final String IPV4_REGEX =
+            "^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\." +
+                    "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\." +
+                    "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\." +
+                    "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$";
+
+    private static final Pattern IPv4_PATTERN = Pattern.compile(IPV4_REGEX);
 
     @FXML
     private Label errorLabel;
@@ -37,26 +45,30 @@ public class ConfigurazioneController implements Initializable, EventHandler<Key
     @FXML
     private void configurazioneConnessioneServer(ActionEvent event){
         errorLabel.setText("");
-        if(!hostServerText.getText().isEmpty() && !portServerText.getText().isEmpty()){
-            try {
-                RunnerRMI.setInstance(hostServerText.getText(), Integer.parseInt(portServerText.getText()));
-                LoadStage.loadStage(HomeApplication.class, event);
-            } catch (NotBoundException | RemoteException e) {
-                errorLabel.setTextFill(Color.RED);
-                errorLabel.setText("Client exception: controlla che il server sia up!");
-                System.err.println(e.getMessage());
-                try {
-                    if(RunnerRMI.getInstance().getClient() != null){
-                        UnicastRemoteObject.unexportObject(RunnerRMI.getInstance().getClient(), true);
-                    }
-                } catch (RemoteException ex) {
-                    ex.printStackTrace();
-                    System.exit(0);
-                }
+        Task<RunnerRMI> task = new Task<>() {
+            @Override
+            protected RunnerRMI call(){
+                return RunnerRMI.setInstance(hostServerText.getText(), Integer.parseInt(portServerText.getText()));
             }
-        }else {
+        };
+
+        if(!hostServerText.getText().isEmpty() && !portServerText.getText().isEmpty() && isValidInet4Address(hostServerText.getText())){
+            errorLabel.setTextFill(Color.GREEN);
+            errorLabel.setText("Connessione in corso...");
+
+            new Thread(task).start();
+
+            task.addEventHandler(WorkerStateEvent.WORKER_STATE_SUCCEEDED, workerStateEvent -> {
+                if(task.getValue() != null){
+                    LoadStage.loadStage(HomeApplication.class, event);
+                }else{
+                    errorLabel.setTextFill(Color.RED);
+                    errorLabel.setText("Errore: controlla che il server sia attivo, o che host e port siano corretti!");
+                }
+            });
+        }else if(!isValidInet4Address(hostServerText.getText())) {
             errorLabel.setTextFill(Color.RED);
-            errorLabel.setText("I campi non possono essere vuoti");
+            errorLabel.setText("Formato host non valido");
         }
     }
 
@@ -74,5 +86,13 @@ public class ConfigurazioneController implements Initializable, EventHandler<Key
             }
 
         }
+    }
+    private boolean isValidInet4Address(String ip) {
+        if (ip == null) {
+            return false;
+        }
+        Matcher matcher = IPv4_PATTERN.matcher(ip);
+
+        return matcher.matches();
     }
 }

@@ -3,10 +3,13 @@ package com.centrovaccinale.centrovaccinale.utils;
 import com.centrovaccinale.centrovaccinale.rmi.ClientImpl;
 import com.centrovaccinale.centrovaccinale.rmi.Server;
 
+import java.rmi.AccessException;
+import java.rmi.NoSuchObjectException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
 
 /**
  * Classe che fa da client per l'architettura RMI.
@@ -19,6 +22,8 @@ import java.rmi.registry.Registry;
  */
 public class RunnerRMI {
 
+    static final int OK = 1;
+    static final int KO = 0;
     private static RunnerRMI instance;
     private final ClientImpl client;
     private final Registry registry;
@@ -30,9 +35,9 @@ public class RunnerRMI {
         System.setProperty("java.security.policy", "src/main/java/policies");
         System.setSecurityManager(new SecurityManager());
         //CONNESSIONE CON IL SERVER
-        this.client = new ClientImpl();
         this.registry = LocateRegistry.getRegistry(host, port);
         this.server = (Server) registry.lookup("ServerCentroVaccinale");
+        this.client = new ClientImpl();
         System.err.println("Client: " + client);
         System.err.println("Registry: " + registry);
         System.err.println("Server: " + server);
@@ -46,15 +51,16 @@ public class RunnerRMI {
      * Gli vengono passati host e port per indicare al registry dove si trova il server.
      * @param host host del server.
      * @param port porta in cui il registry cerca il server.
-     * @throws NotBoundException nel caso in cui non si trova il server.
-     * @throws RemoteException nel caso in cui ci siano problemi di comunicazione.
      */
-    public static void setInstance(String host, int port) throws NotBoundException, RemoteException {
-        if(instance == null){
-            instance = new RunnerRMI(host, port);
-        }else {
-            instance = null;
+    public static synchronized RunnerRMI setInstance(String host, int port) {
+        try {
+            if(instance == null){
+                instance = new RunnerRMI(host, port);
+            }
+        } catch (NotBoundException | RemoteException e) {
+            return null;
         }
+        return instance;
     }
 
     /**
@@ -104,21 +110,21 @@ public class RunnerRMI {
      * Metodo che setta un nuovo server nel caso in cui si perde la connessione.
      * @param server riferimento al server.
      */
-    public void setServer(Server server) {
+    public synchronized void setServer(Server server) {
         this.server = server;
     }
 
     /**
      * @return Registry
      * */
-    public Registry getRegistry() {
+    public synchronized Registry getRegistry() {
         return registry;
     }
 
     /**
      * @return ClientImpl
      * */
-    public ClientImpl getClient(){
+    public synchronized ClientImpl getClient(){
         return client;
     }
 
