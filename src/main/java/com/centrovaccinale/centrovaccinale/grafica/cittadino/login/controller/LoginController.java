@@ -1,7 +1,6 @@
 package com.centrovaccinale.centrovaccinale.grafica.cittadino.login.controller;
 
 import com.centrovaccinale.centrovaccinale.grafica.cittadino.menu.main.CittadinoMenuApplication;
-import com.centrovaccinale.centrovaccinale.grafica.home.main.HomeApplication;
 import com.centrovaccinale.centrovaccinale.rmi.Server;
 import com.centrovaccinale.centrovaccinale.utils.LoadStage;
 import com.centrovaccinale.centrovaccinale.utils.Login;
