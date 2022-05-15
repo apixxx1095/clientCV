@@ -1,11 +1,9 @@
 package com.centrovaccinale.centrovaccinale.grafica.cittadino.ricercacentro.controller;
 
 import com.centrovaccinale.centrovaccinale.entita.RiepilogoEventi;
-import com.centrovaccinale.centrovaccinale.grafica.home.main.HomeApplication;
+import com.centrovaccinale.centrovaccinale.grafica.cittadino.menu.main.CittadinoMenuApplication;
 import com.centrovaccinale.centrovaccinale.utils.LoadStage;
 import com.centrovaccinale.centrovaccinale.utils.RunnerRMI;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -180,7 +178,7 @@ public class RicercaCentroController implements Initializable, EventHandler<KeyE
 
     @FXML
     private void tornaHome(ActionEvent event){
-        LoadStage.loadStage(HomeApplication.class, event);
+        LoadStage.loadStage(CittadinoMenuApplication.class, event);
     }
 
     @Override

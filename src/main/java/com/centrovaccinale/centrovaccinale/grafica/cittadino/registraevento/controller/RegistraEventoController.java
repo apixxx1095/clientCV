@@ -1,6 +1,7 @@
 package com.centrovaccinale.centrovaccinale.grafica.cittadino.registraevento.controller;
 
 import com.centrovaccinale.centrovaccinale.entita.EventoAvverso;
+import com.centrovaccinale.centrovaccinale.grafica.cittadino.menu.main.CittadinoMenuApplication;
 import com.centrovaccinale.centrovaccinale.grafica.home.main.HomeApplication;
 import com.centrovaccinale.centrovaccinale.rmi.Server;
 import com.centrovaccinale.centrovaccinale.utils.LoadStage;
@@ -93,7 +94,7 @@ public class RegistraEventoController implements Initializable, EventHandler<Key
     }
     @FXML
     private void tornaHome(ActionEvent actionEvent) {
-        LoadStage.loadStage(HomeApplication.class, actionEvent);
+        LoadStage.loadStage(CittadinoMenuApplication.class, actionEvent);
     }
 
     @Override
@@ -104,12 +105,9 @@ public class RegistraEventoController implements Initializable, EventHandler<Key
         registrazione_evento_severita_4.setUserData("4");
         registrazione_evento_severita_5.setUserData("5");
 
-        registrazione_evento_toggleSeverita.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
-            @Override
-            public void changed(ObservableValue<? extends Toggle> observableValue, Toggle toggle, Toggle t1) {
-                if(registrazione_evento_toggleSeverita != null){
-                    severita = Integer.parseInt(registrazione_evento_toggleSeverita.getSelectedToggle().getUserData().toString());
-                }
+        registrazione_evento_toggleSeverita.selectedToggleProperty().addListener((observableValue, toggle, t1) -> {
+            if(registrazione_evento_toggleSeverita != null){
+                severita = Integer.parseInt(registrazione_evento_toggleSeverita.getSelectedToggle().getUserData().toString());
             }
         });
 
@@ -132,12 +130,9 @@ public class RegistraEventoController implements Initializable, EventHandler<Key
 
         registrazione_evento_menuTipoEvento.setValue("Seleziona tipo evento");
         registrazione_evento_menuTipoEvento.getItems().addAll(tipoEvento);
-        registrazione_evento_menuTipoEvento.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                System.out.println("Selezione: " + tipoEvento[t1.intValue()]);
-                tipoEventoSelezionato = tipoEvento[t1.intValue()];
-            }
+        registrazione_evento_menuTipoEvento.getSelectionModel().selectedIndexProperty().addListener((observableValue, number, t1) -> {
+            System.out.println("Selezione: " + tipoEvento[t1.intValue()]);
+            tipoEventoSelezionato = tipoEvento[t1.intValue()];
         });
     }
 

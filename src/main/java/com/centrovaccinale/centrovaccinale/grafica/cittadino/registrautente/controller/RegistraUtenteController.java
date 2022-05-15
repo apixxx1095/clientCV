@@ -1,7 +1,7 @@
 package com.centrovaccinale.centrovaccinale.grafica.cittadino.registrautente.controller;
 
 import com.centrovaccinale.centrovaccinale.entita.CittadinoRegistrato;
-import com.centrovaccinale.centrovaccinale.grafica.home.main.HomeApplication;
+import com.centrovaccinale.centrovaccinale.grafica.cittadino.menu.main.CittadinoMenuApplication;
 import com.centrovaccinale.centrovaccinale.utils.LoadStage;
 import com.centrovaccinale.centrovaccinale.utils.RunnerRMI;
 import javafx.event.ActionEvent;
@@ -9,7 +9,6 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
@@ -25,8 +24,6 @@ import java.util.ResourceBundle;
 
 public class
 RegistraUtenteController implements Initializable, EventHandler<KeyEvent> {
-    @FXML
-    private Button tornaAllaHomeBtn;
     @FXML
     private Label errorLabel;
     @FXML
@@ -134,8 +131,8 @@ RegistraUtenteController implements Initializable, EventHandler<KeyEvent> {
     }
 
     @FXML
-    private void tornaHome(ActionEvent actionEvent) throws IOException {
-        LoadStage.loadStage(HomeApplication.class, actionEvent);
+    private void tornaHome(ActionEvent actionEvent) {
+        LoadStage.loadStage(CittadinoMenuApplication.class, actionEvent);
     }
 
     @Override

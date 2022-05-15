@@ -82,7 +82,7 @@ public class LoginController implements Initializable, EventHandler<KeyEvent> {
 			}
 		}
 		else if(evt.equals(btnHome)) {
-			LoadStage.loadStage(HomeApplication.class, event);
+			LoadStage.loadStage(CittadinoMenuApplication.class, event);
 		}
     }
 

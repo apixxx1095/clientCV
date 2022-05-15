@@ -1,7 +1,9 @@
 package com.centrovaccinale.centrovaccinale.grafica.operatore.registracentro.controller;
 
 import com.centrovaccinale.centrovaccinale.entita.CentroVaccinale;
+import com.centrovaccinale.centrovaccinale.grafica.cittadino.menu.main.CittadinoMenuApplication;
 import com.centrovaccinale.centrovaccinale.grafica.home.main.HomeApplication;
+import com.centrovaccinale.centrovaccinale.grafica.operatore.menu.main.OperatoreApplication;
 import com.centrovaccinale.centrovaccinale.rmi.Server;
 import com.centrovaccinale.centrovaccinale.utils.LoadStage;
 import com.centrovaccinale.centrovaccinale.utils.RunnerRMI;
@@ -142,7 +144,7 @@ public class RegistraCentroController implements Initializable, EventHandler <Ke
 
     @FXML
     private void tornaHome(ActionEvent actionEvent) {
-        LoadStage.loadStage(HomeApplication.class, actionEvent);
+        LoadStage.loadStage(OperatoreApplication.class, actionEvent);
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -151,12 +153,9 @@ public class RegistraCentroController implements Initializable, EventHandler <Ke
         registraCentro_tipologia_aziendale.setUserData("Aziendale");
         registraCentro_tipologia_hub.setUserData("Hub");
 
-        toggleGroupTipologia.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
-            @Override
-            public void changed(ObservableValue<? extends Toggle> observableValue, Toggle toggle, Toggle t1) {
-                if(toggleGroupTipologia != null){
-                    tipologiaCentro = toggleGroupTipologia.getSelectedToggle().getUserData().toString();
-                }
+        toggleGroupTipologia.selectedToggleProperty().addListener((observableValue, toggle, t1) -> {
+            if(toggleGroupTipologia != null){
+                tipologiaCentro = toggleGroupTipologia.getSelectedToggle().getUserData().toString();
             }
         });
 
@@ -164,12 +163,9 @@ public class RegistraCentroController implements Initializable, EventHandler <Ke
         registraCentro_qualificatore_via.setUserData("Via");
         registraCentro_qualificatore_viale.setUserData("Viale");
 
-        toggleGroupQualificatore.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
-            @Override
-            public void changed(ObservableValue<? extends Toggle> observableValue, Toggle toggle, Toggle t1) {
-                if(toggleGroupQualificatore != null){
-                    qualificatoreIndirizzo = toggleGroupQualificatore.getSelectedToggle().getUserData().toString();
-                }
+        toggleGroupQualificatore.selectedToggleProperty().addListener((observableValue, toggle, t1) -> {
+            if(toggleGroupQualificatore != null){
+                qualificatoreIndirizzo = toggleGroupQualificatore.getSelectedToggle().getUserData().toString();
             }
         });
 

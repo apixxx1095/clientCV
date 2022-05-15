@@ -1,7 +1,8 @@
 package com.centrovaccinale.centrovaccinale.grafica.operatore.registravaccinato.controller;
 
 import com.centrovaccinale.centrovaccinale.entita.CittadinoVaccinato;
-import com.centrovaccinale.centrovaccinale.grafica.home.main.HomeApplication;
+import com.centrovaccinale.centrovaccinale.grafica.cittadino.menu.main.CittadinoMenuApplication;
+import com.centrovaccinale.centrovaccinale.grafica.operatore.menu.main.OperatoreApplication;
 import com.centrovaccinale.centrovaccinale.rmi.Server;
 import com.centrovaccinale.centrovaccinale.utils.LoadStage;
 import com.centrovaccinale.centrovaccinale.utils.RunnerRMI;
@@ -54,8 +55,6 @@ public class RegistraVaccinatoController implements Initializable, EventHandler<
     private DatePicker registraCittadino_dataSomministrazioneVaccino;
     @FXML
     private Label errorLabel;
-    @FXML
-    private Button registraVaccinatoBtn;
 
     @FXML
     private void aggiornataData(ActionEvent event){
@@ -150,7 +149,7 @@ public class RegistraVaccinatoController implements Initializable, EventHandler<
 
     @FXML
     private void tornaHome(ActionEvent actionEvent){
-        LoadStage.loadStage(HomeApplication.class, actionEvent);
+        LoadStage.loadStage(OperatoreApplication.class, actionEvent);
     }
 
     @Override
@@ -160,12 +159,9 @@ public class RegistraVaccinatoController implements Initializable, EventHandler<
         registraCittadino_vaccinoSomministrato_moderna.setUserData("Moderna");
         registraCittadino_vaccinoSomministrato_jj.setUserData("J&J");
 
-        toggleGroupVaccinoSomministrato.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
-            @Override
-            public void changed(ObservableValue<? extends Toggle> observableValue, Toggle toggle, Toggle t1) {
-                if(toggleGroupVaccinoSomministrato != null){
-                    vaccinoSomministrato = toggleGroupVaccinoSomministrato.getSelectedToggle().getUserData().toString();
-                }
+        toggleGroupVaccinoSomministrato.selectedToggleProperty().addListener((observableValue, toggle, t1) -> {
+            if(toggleGroupVaccinoSomministrato != null){
+                vaccinoSomministrato = toggleGroupVaccinoSomministrato.getSelectedToggle().getUserData().toString();
             }
         });
 
