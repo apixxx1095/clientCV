@@ -51,6 +51,7 @@ public class RunnerRMI {
      * Gli vengono passati host e port per indicare al registry dove si trova il server.
      * @param host host del server.
      * @param port porta in cui il registry cerca il server.
+     * @return Singleton contenente il riferimento al server, registry e client. Null se ci sono problemi.
      */
     public static synchronized RunnerRMI setInstance(String host, int port) {
         try {
