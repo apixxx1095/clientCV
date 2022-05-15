@@ -159,9 +159,12 @@ public class RegistraVaccinatoController implements Initializable, EventHandler<
         registraCittadino_vaccinoSomministrato_moderna.setUserData("Moderna");
         registraCittadino_vaccinoSomministrato_jj.setUserData("J&J");
 
-        toggleGroupVaccinoSomministrato.selectedToggleProperty().addListener((observableValue, toggle, t1) -> {
-            if(toggleGroupVaccinoSomministrato != null){
-                vaccinoSomministrato = toggleGroupVaccinoSomministrato.getSelectedToggle().getUserData().toString();
+        toggleGroupVaccinoSomministrato.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+            @Override
+            public void changed(ObservableValue<? extends Toggle> observableValue, Toggle toggle, Toggle t1) {
+                if(toggleGroupVaccinoSomministrato != null){
+                    vaccinoSomministrato = toggleGroupVaccinoSomministrato.getSelectedToggle().getUserData().toString();
+                }
             }
         });
 

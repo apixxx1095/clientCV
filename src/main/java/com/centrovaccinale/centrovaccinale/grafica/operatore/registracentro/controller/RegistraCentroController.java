@@ -5,6 +5,8 @@ import com.centrovaccinale.centrovaccinale.grafica.operatore.menu.main.Operatore
 import com.centrovaccinale.centrovaccinale.rmi.Server;
 import com.centrovaccinale.centrovaccinale.utils.LoadStage;
 import com.centrovaccinale.centrovaccinale.utils.RunnerRMI;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -145,9 +147,12 @@ public class RegistraCentroController implements Initializable, EventHandler <Ke
         registraCentro_tipologia_aziendale.setUserData("Aziendale");
         registraCentro_tipologia_hub.setUserData("Hub");
 
-        toggleGroupTipologia.selectedToggleProperty().addListener((observableValue, toggle, t1) -> {
-            if(toggleGroupTipologia != null){
-                tipologiaCentro = toggleGroupTipologia.getSelectedToggle().getUserData().toString();
+        toggleGroupTipologia.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+            @Override
+            public void changed(ObservableValue<? extends Toggle> observableValue, Toggle toggle, Toggle t1) {
+                if(toggleGroupTipologia != null){
+                    tipologiaCentro = toggleGroupTipologia.getSelectedToggle().getUserData().toString();
+                }
             }
         });
 
@@ -155,9 +160,12 @@ public class RegistraCentroController implements Initializable, EventHandler <Ke
         registraCentro_qualificatore_via.setUserData("Via");
         registraCentro_qualificatore_viale.setUserData("Viale");
 
-        toggleGroupQualificatore.selectedToggleProperty().addListener((observableValue, toggle, t1) -> {
-            if(toggleGroupQualificatore != null){
-                qualificatoreIndirizzo = toggleGroupQualificatore.getSelectedToggle().getUserData().toString();
+        toggleGroupQualificatore.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+            @Override
+            public void changed(ObservableValue<? extends Toggle> observableValue, Toggle toggle, Toggle t1) {
+                if(toggleGroupQualificatore != null){
+                    qualificatoreIndirizzo = toggleGroupQualificatore.getSelectedToggle().getUserData().toString();
+                }
             }
         });
 
