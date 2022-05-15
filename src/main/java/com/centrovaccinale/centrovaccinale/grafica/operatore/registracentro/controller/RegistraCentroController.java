@@ -1,14 +1,10 @@
 package com.centrovaccinale.centrovaccinale.grafica.operatore.registracentro.controller;
 
 import com.centrovaccinale.centrovaccinale.entita.CentroVaccinale;
-import com.centrovaccinale.centrovaccinale.grafica.cittadino.menu.main.CittadinoMenuApplication;
-import com.centrovaccinale.centrovaccinale.grafica.home.main.HomeApplication;
 import com.centrovaccinale.centrovaccinale.grafica.operatore.menu.main.OperatoreApplication;
 import com.centrovaccinale.centrovaccinale.rmi.Server;
 import com.centrovaccinale.centrovaccinale.utils.LoadStage;
 import com.centrovaccinale.centrovaccinale.utils.RunnerRMI;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -27,8 +23,6 @@ public class RegistraCentroController implements Initializable, EventHandler <Ke
     private String tipologiaCentro;
     private String qualificatoreIndirizzo;
 
-    @FXML
-    private Button tornaHomeBtn;
     @FXML
     private ToggleGroup toggleGroupQualificatore;
     @FXML
@@ -63,8 +57,6 @@ public class RegistraCentroController implements Initializable, EventHandler <Ke
     private TextField registraCentro_cap;
     @FXML
     private Label errorLabel;
-    @FXML
-    private Button registraCentroBtn;
 
     @FXML
     private void registraCentroVaccinale(ActionEvent actionEvent){
@@ -197,14 +189,5 @@ public class RegistraCentroController implements Initializable, EventHandler <Ke
                 event.consume();
             }
         }
-
-//        if (event.getCode() == KeyCode.SPACE  || " ".equals(event.getCharacter())){
-//            if (event.getEventType() == KeyEvent.KEY_TYPED)
-//            {
-//                System.out.println("Code that responds to SpaceBar");
-//            }
-//            event.consume();
-//        }
-
     }
 }

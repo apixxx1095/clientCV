@@ -2,13 +2,10 @@ package com.centrovaccinale.centrovaccinale.grafica.cittadino.registraevento.con
 
 import com.centrovaccinale.centrovaccinale.entita.EventoAvverso;
 import com.centrovaccinale.centrovaccinale.grafica.cittadino.menu.main.CittadinoMenuApplication;
-import com.centrovaccinale.centrovaccinale.grafica.home.main.HomeApplication;
 import com.centrovaccinale.centrovaccinale.rmi.Server;
 import com.centrovaccinale.centrovaccinale.utils.LoadStage;
 import com.centrovaccinale.centrovaccinale.utils.Login;
 import com.centrovaccinale.centrovaccinale.utils.RunnerRMI;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -46,8 +43,6 @@ public class RegistraEventoController implements Initializable, EventHandler<Key
     private ToggleGroup registrazione_evento_toggleSeverita;
     @FXML
     private TextArea registrazione_evento_notaEvento;
-    @FXML
-    private Button registraEventoBtn;
 
     @FXML
     private Label errorLabel;
