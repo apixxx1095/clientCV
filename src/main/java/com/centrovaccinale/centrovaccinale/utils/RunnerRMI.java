@@ -3,13 +3,10 @@ package com.centrovaccinale.centrovaccinale.utils;
 import com.centrovaccinale.centrovaccinale.rmi.ClientImpl;
 import com.centrovaccinale.centrovaccinale.rmi.Server;
 
-import java.rmi.AccessException;
-import java.rmi.NoSuchObjectException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.rmi.server.UnicastRemoteObject;
 
 /**
  * Classe che fa da client per l'architettura RMI.
@@ -22,8 +19,6 @@ import java.rmi.server.UnicastRemoteObject;
  */
 public class RunnerRMI {
 
-    static final int OK = 1;
-    static final int KO = 0;
     private static RunnerRMI instance;
     private final ClientImpl client;
     private final Registry registry;

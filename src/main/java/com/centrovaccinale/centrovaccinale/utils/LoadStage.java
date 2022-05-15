@@ -26,7 +26,7 @@ import java.util.logging.Logger;
  * @author Erica Bonetti 740946 VA
  * @version 0.0.1
  */
-public class LoadStage<T>{
+public class LoadStage {
     /**
      * Metodo che si occupa del caricamento delle finestre per il passaggio da una finestra all'altra.
      * @param classe Riferimento della classe di cui si vuole creare l'istanza.
@@ -75,22 +75,6 @@ public class LoadStage<T>{
             else if(classe.equals(ConfigurazioneApplication.class)){
                 new ConfigurazioneApplication().start(stage);
             }
-
-//            Parent root = FXMLLoader.load(Objects.requireNonNull(LoadStage.class.getResource(url)));
-//            Scene scene = new Scene(root);
-//            stage.setScene(scene);
-//            Stage newStage = new Stage();
-//            newStage.setScene(scene);
-//            newStage.setResizable(false);
-//            newStage.setTitle(nameWindows);
-//            newStage.show();
-//
-//            newStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-//                @Override
-//                public void handle(WindowEvent event) {
-//                    Platform.exit();
-//                }
-//            });
         }catch (IOException e){
             Logger.getLogger(LoadStage.class.getName()).log(Level.SEVERE, null, e);
         }
