@@ -42,7 +42,7 @@
          </font>
       </Label>
       <PasswordField fx:id="textPassword" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" promptText="Inserisci password" />
-      <Button fx:id="btnAccedi" alignment="CENTER" defaultButton="true" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#eventAction" prefHeight="37.0" prefWidth="150.0" style="-fx-background-color: #abd4e8;" text="Accedi" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+      <Button fx:id="btnAccedi" alignment="CENTER" defaultButton="true" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#eventAction" prefHeight="37.0" prefWidth="150.0" text="Accedi" textAlignment="CENTER" VBox.vgrow="ALWAYS">
          <VBox.margin>
             <Insets bottom="5.0" top="25.0" />
          </VBox.margin>
@@ -53,7 +53,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btnHome" alignment="CENTER" cancelButton="true" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#eventAction" prefHeight="34.0" prefWidth="150.0" style="-fx-background-color: #dedede;" text="Torna alla Home" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+      <Button fx:id="btnHome" alignment="CENTER" cancelButton="true" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#eventAction" prefHeight="34.0" prefWidth="150.0" text="Indietro" textAlignment="CENTER" VBox.vgrow="ALWAYS">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

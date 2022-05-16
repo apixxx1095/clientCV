@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 
 import java.net.URL;
@@ -189,7 +190,7 @@ public class RicercaCentroController implements Initializable, EventHandler<KeyE
     }
 
     @FXML
-    private void tornaHome(ActionEvent event){
+    private void back(ActionEvent event){
         LoadStage.loadStage(CittadinoMenuApplication.class, event);
     }
 

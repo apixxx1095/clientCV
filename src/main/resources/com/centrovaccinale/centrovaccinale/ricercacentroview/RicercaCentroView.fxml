@@ -22,23 +22,26 @@
                   <Font name="System Bold" size="22.0" />
                </font>
             </Label>
-            <HBox prefHeight="143.0" prefWidth="800.0">
+            <HBox focusTraversable="true" prefHeight="143.0" prefWidth="800.0">
                <children>
-                  <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                  <Pane focusTraversable="true" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                      <children>
                         <Label layoutX="43.0" layoutY="51.0" text="Nome centro:" textFill="#e6e9ed">
                            <font>
                               <Font size="14.0" />
                            </font></Label>
                         <TextField fx:id="ricerca_centro_nomeCentro" layoutX="135.0" layoutY="47.0" prefHeight="25.0" prefWidth="238.0" promptText="Inserisci nome centro" />
-                        <Button fx:id="ricercaNomeBtn" alignment="CENTER" layoutX="43.0" layoutY="102.0" mnemonicParsing="false" onAction="#ricerca" prefHeight="25.0" prefWidth="329.0" style="-fx-background-color: #abd4e8;" text="Ricerca">
+                        <Button fx:id="ricercaNomeBtn" alignment="CENTER" defaultButton="true" layoutX="43.0" layoutY="102.0" mnemonicParsing="false" onAction="#ricerca" prefHeight="25.0" prefWidth="329.0" text="Ricerca">
                            <font>
                               <Font size="14.0" />
-                           </font></Button>
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
                      </children>
                   </Pane>
                   <Separator orientation="VERTICAL" prefHeight="163.0" prefWidth="10.0" />
-                  <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                  <Pane focusTraversable="true" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                      <children>
                         <Label layoutX="45.0" layoutY="28.0" text="Comune:" textFill="#e6e9ed">
                            <font>
@@ -50,10 +53,13 @@
                               <Font size="14.0" />
                            </font></Label>
                         <TextField fx:id="ricerca_centro_tipologiaCentro" layoutX="114.0" layoutY="61.0" prefHeight="25.0" prefWidth="238.0" promptText="Inserisci tipologia del centro" />
-                        <Button fx:id="ricercaComuneTipologiaBtn" alignment="CENTER" layoutX="43.0" layoutY="102.0" mnemonicParsing="false" onAction="#ricerca" prefHeight="25.0" prefWidth="309.0" style="-fx-background-color: #abd4e8" text="Ricerca">
+                        <Button fx:id="ricercaComuneTipologiaBtn" alignment="CENTER" defaultButton="true" layoutX="43.0" layoutY="102.0" mnemonicParsing="false" onAction="#ricerca" prefHeight="25.0" prefWidth="309.0" text="Ricerca">
                            <font>
                               <Font size="14.0" />
-                           </font></Button>
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
                      </children>
                   </Pane>
                </children>
@@ -92,13 +98,10 @@
                </cursor>
             </ListView>
             <Separator orientation="VERTICAL" prefHeight="200.0" />
-            <TextArea fx:id="informazioniCentro" editable="false" prefHeight="200.0" prefWidth="200.0" text="&#10;" wrapText="true" HBox.hgrow="ALWAYS">
+            <TextArea fx:id="informazioniCentro" cache="true" cacheHint="QUALITY" cacheShape="false" centerShape="false" editable="false" focusTraversable="false" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="200.0" prefWidth="200.0" scaleShape="false" text="&#10;" wrapText="true" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets right="5.0" />
                </HBox.margin>
-               <font>
-                  <Font size="14.0" />
-               </font>
             </TextArea>
          </children>
       </HBox>
@@ -107,13 +110,16 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </VBox.margin>
       </Label>
-      <Button defaultButton="true" mnemonicParsing="false" onAction="#tornaHome" prefHeight="35.0" prefWidth="370.0" style="-fx-background-color: #dedede;" text="Torna alla Home">
+      <Button cancelButton="true" mnemonicParsing="false" onAction="#back" prefHeight="35.0" prefWidth="370.0" text="Indietro">
          <VBox.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" />
          </VBox.margin>
          <font>
             <Font size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
    </children>
 </VBox>

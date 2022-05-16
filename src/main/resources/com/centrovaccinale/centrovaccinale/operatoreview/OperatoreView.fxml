@@ -30,7 +30,7 @@
                   <Insets bottom="20.0" />
                </VBox.margin>
             </ImageView>
-            <Button fx:id="btnHome" mnemonicParsing="false" onAction="#actionEvent" prefHeight="30.0" prefWidth="150.0" text="Torna alla Home" VBox.vgrow="ALWAYS" style="-fx-background-color: #dedede;">
+            <Button fx:id="btnHome" mnemonicParsing="false" onAction="#actionEvent" prefHeight="30.0" prefWidth="150.0" text="Torna alla Home" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
@@ -56,7 +56,7 @@
                <font>
                   <Font size="16.0" />
                </font></Label>
-            <Button fx:id="btnRegistraCentro" mnemonicParsing="false" onAction="#actionEvent" prefHeight="45.0" prefWidth="200.0" text="Registra nuovo centro vaccinale" VBox.vgrow="ALWAYS" style="-fx-background-color: #abd4e8;">
+            <Button fx:id="btnRegistraCentro" defaultButton="true" mnemonicParsing="false" onAction="#actionEvent" prefHeight="45.0" prefWidth="200.0" text="Registra nuovo centro vaccinale" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
@@ -64,7 +64,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="btnRegistraVaccinato" mnemonicParsing="false" onAction="#actionEvent" prefHeight="45.0" prefWidth="200.0" text="Registra nuovo cittadino vaccinato" VBox.vgrow="ALWAYS" style="-fx-background-color: #abd4e8;">
+            <Button fx:id="btnRegistraVaccinato" defaultButton="true" mnemonicParsing="false" onAction="#actionEvent" prefHeight="45.0" prefWidth="200.0" text="Registra nuovo cittadino vaccinato" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets bottom="30.0" />
                </VBox.margin>

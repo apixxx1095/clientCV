@@ -148,7 +148,7 @@ public class RegistraVaccinatoController implements Initializable, EventHandler<
     }
 
     @FXML
-    private void tornaHome(ActionEvent actionEvent){
+    private void back(ActionEvent actionEvent){
         LoadStage.loadStage(OperatoreApplication.class, actionEvent);
     }
 

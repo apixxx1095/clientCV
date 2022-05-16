@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -64,10 +65,16 @@
       <Button fx:id="registraVaccinatoBtn" defaultButton="true" layoutX="200.0" layoutY="355.0" mnemonicParsing="false" onAction="#registraVaccinato" prefWidth="200.0" text="Registra vaccinato">
          <font>
             <Font size="14.0" />
-         </font></Button>
-      <Button fx:id="tornaHomeBtn" layoutX="200.0" layoutY="390.0" mnemonicParsing="false" onAction="#tornaHome" prefWidth="200.0" text="Torna alla Home">
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="tornaHomeBtn" layoutX="200.0" layoutY="390.0" mnemonicParsing="false" onAction="#back" prefWidth="200.0" text="Indietro">
          <font>
             <Font size="14.0" />
-         </font></Button>
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
    </children>
 </Pane>

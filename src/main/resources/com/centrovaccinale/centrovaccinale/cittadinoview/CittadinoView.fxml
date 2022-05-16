@@ -31,19 +31,19 @@
                   <Insets />
                </VBox.margin>
             </ImageView>
-            <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#actionEvent" prefHeight="30.0" prefWidth="150.0" text="Effettua login" VBox.vgrow="ALWAYS" style="-fx-background-color: #dedede;">
+            <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#actionEvent" prefHeight="30.0" prefWidth="150.0" text="Effettua login" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="btnLogout" disable="true" layoutX="96.0" layoutY="245.0" mnemonicParsing="false" onAction="#actionEvent" prefHeight="30.0" prefWidth="150.0" text="Effettua logout" style="-fx-background-color: #dedede;">
+            <Button fx:id="btnLogout" disable="true" layoutX="96.0" layoutY="245.0" mnemonicParsing="false" onAction="#actionEvent" prefHeight="30.0" prefWidth="150.0" text="Effettua logout">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="btnHome" layoutX="96.0" layoutY="261.0" mnemonicParsing="false" onAction="#actionEvent" prefHeight="30.0" prefWidth="150.0" text="Torna alla Home" style="-fx-background-color: #dedede;">
+            <Button fx:id="btnHome" layoutX="96.0" layoutY="261.0" mnemonicParsing="false" onAction="#actionEvent" prefHeight="30.0" prefWidth="150.0" text="Torna alla Home">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -70,7 +70,7 @@
                <font>
                   <Font size="16.0" />
                </font></Label>
-            <Button fx:id="btnRegistrati" defaultButton="true" mnemonicParsing="false" onAction="#actionEvent" prefHeight="45.0" prefWidth="200.0" text="Registrati" VBox.vgrow="ALWAYS" style="-fx-background-color: #abd4e8;">
+            <Button fx:id="btnRegistrati" defaultButton="true" mnemonicParsing="false" onAction="#actionEvent" prefHeight="45.0" prefWidth="200.0" text="Registrati" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
@@ -78,7 +78,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="btnCercaCentro" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#actionEvent" prefHeight="45.0" prefWidth="200.0" text="Cerca centro vaccinale" wrapText="true" VBox.vgrow="ALWAYS" style="-fx-background-color: #abd4e8;">
+            <Button fx:id="btnCercaCentro" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#actionEvent" prefHeight="45.0" prefWidth="200.0" text="Cerca centro vaccinale" wrapText="true" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
@@ -86,7 +86,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="btnRegistraEvento" defaultButton="true" disable="true" layoutX="46.0" layoutY="172.0" mnemonicParsing="false" onAction="#actionEvent" prefHeight="45.0" prefWidth="200.0" text="Inserisci evento avverso" style="-fx-background-color: #abd4e8;">
+            <Button fx:id="btnRegistraEvento" defaultButton="true" disable="true" layoutX="46.0" layoutY="172.0" mnemonicParsing="false" onAction="#actionEvent" prefHeight="45.0" prefWidth="200.0" text="Inserisci evento avverso">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

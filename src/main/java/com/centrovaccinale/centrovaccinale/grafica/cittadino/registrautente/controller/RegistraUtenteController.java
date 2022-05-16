@@ -130,7 +130,7 @@ RegistraUtenteController implements Initializable, EventHandler<KeyEvent> {
     }
 
     @FXML
-    private void tornaHome(ActionEvent actionEvent) {
+    private void back(ActionEvent actionEvent) {
         LoadStage.loadStage(CittadinoMenuApplication.class, actionEvent);
     }
 
